@@ -1,5 +1,5 @@
 import logo from '../images/logo.svg'
-import { pageLinks } from '../data';
+import { pageLinks, socialLinks } from '../data';
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -10,51 +10,41 @@ const Navbar = () => {
             <i className="fas fa-bars"></i>
           </button>
         </div>
+        
         {/* <!-- left this comment on purpose --> */}
         <ul className="nav-links" id="nav-links">
-          {pageLinks.map((link) => {
-            return(
-              <li key ={link.id}>
-              <a href={link.href} className="nav-link">{link.text} </a>
-            </li>
-            );
-          })}
-          {/* <li>
-            <a href="#home" className="nav-link"> home </a>
-          </li> */}
-{/* 
-          <li>
-            <a href="#about" className="nav-link"> about </a>
-          </li>
+        {
 
-          <li>
-            <a href="#services" className="nav-link"> services </a>
-          </li>
 
-          <li>
-            <a href="#tours" className="nav-link"> tours</a>
-          </li> */}
+  pageLinks.map((link) => {
+    return (
+      <li key={link.id}>
+        <a href={link.href} className='nav-link'>
+          {link.text}
+        </a>
+      </li>
+    )
+  })
+}
+  
         </ul>
-
-        <ul className="nav-icons">
-          <li>
-            <a href="https://www.twitter.com" target="_blank" className="nav-icon"
-              ><i className="fab fa-facebook"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com" target="_blank" className="nav-icon"
-              ><i className="fab fa-twitter"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.twitter.com" target="_blank" className="nav-icon"
-              ><i className="fab fa-squarespace"></i
-            ></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<ul className='nav-icons' id='nav-icons'>
+        {
+  socialLinks.map((link) => {
+    const { id, href, icon } = link;
+    return (
+      <li key={id}>
+        <a href={href} target='_blank'
+         rel='noreferrer' className='nav-icon'>
+          <i className={icon}></i>
+        </a>
+      </li>
+      
     );
-};
-export default Navbar
+  })}
+</ul>
+</div>
+</nav>
+)};
+
+export default Navbar;

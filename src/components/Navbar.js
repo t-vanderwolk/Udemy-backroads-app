@@ -14,16 +14,14 @@ const Navbar = () => {
         {/* <!-- left this comment on purpose --> */}
         <ul className="nav-links" id="nav-links">
         {
-
-
-  pageLinks.map((link) => {
+pageLinks.map((link) => {
     return (
       <li key={link.id}>
         <a href={link.href} className='nav-link'>
           {link.text}
         </a>
       </li>
-    )
+    );
   })
 }
   
@@ -45,6 +43,7 @@ const Navbar = () => {
 </ul>
 </div>
 </nav>
-)};
+);
+};
 
 export default Navbar;
